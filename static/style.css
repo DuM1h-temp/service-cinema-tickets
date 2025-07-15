@@ -39,3 +39,13 @@ a:hover {
 .button:hover {
     background: #0056b3;
 }
+.poster-card {
+    transition: all 0.3s ease;
+    min-height: 600px;
+}
+
+.poster-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
