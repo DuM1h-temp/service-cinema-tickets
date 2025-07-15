@@ -11,3 +11,8 @@
             <h2>{{ film.title }}</h2>
             <p>Дата: <strong>{{ show.date }}</strong></p>
             <p>Час: <strong>{{ show.time }}</strong></p>
+            {% if admin %}
+            <button type="button" class="btn btn-outline-primary mb-3" data-bs-toggle="modal" data-bs-target="#bookedModal">
+                Заброньовані місця
+            </button>
+            {% endif %}
