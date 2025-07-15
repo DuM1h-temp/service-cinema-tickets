@@ -42,4 +42,29 @@
             </form>
         </div>
     </div>
+    <hr>
+    <h3>Поточні покази</h3>
+    <div class="list-group">
+        {% for show in shows %}
+            {% set film = films | selectattr("id", "equalto", show.film_id) | first %}
+            <div class="list-group-item custom-show d-flex justify-content-between align-items-center">
+                <div>
+                    {{ show.date }} {{ show.time }} — {{ film.title if film else "Невідомо" }}
+                </div>
+                <div class="d-flex">
+                    <button type="button"
+                            class="btn btn-warning btn-sm me-2 edit-button"
+                            data-show-id="{{ show.id }}"
+                            data-date="{{ show.date }}"
+                            data-time="{{ show.time }}"
+                            data-film_id="{{ show.film_id }}">
+                        Редагувати
+                    </button>
+                    <form method="post" action="{{ url_for('delete_show', show_id=show.id) }}" onsubmit="return confirm('Ви дійсно хочете видалити цей показ?');" style="margin: 0;">
+                        <button type="submit" class="btn btn-danger btn-sm">Видалити</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
