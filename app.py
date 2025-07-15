@@ -154,3 +154,22 @@ def add_film():
         json.dump(films, f, indent=4, ensure_ascii=False)
 
     return redirect(url_for("admin_panel"))
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        data = load_data()
+        admin = data.get("admin", {})
+        if username == admin.get("username") and password == admin.get("password"):
+            session["admin"] = True
+            return redirect(url_for("admin_panel"))
+        else:
+            return render_template("login.html", error="Невірний логін або пароль")
+    return render_template("login.html")
+
+@app.route("/logout")
+def logout():
+    session.pop("admin", None)
+    return redirect(url_for("index"))
