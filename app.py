@@ -173,3 +173,7 @@ def login():
 def logout():
     session.pop("admin", None)
     return redirect(url_for("index"))
+
+@app.context_processor
+def inject_user():
+    return dict(is_admin=session.get("admin", False))
