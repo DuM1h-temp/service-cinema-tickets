@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, abort
+from flask import Flask, render_template, request, session, abort, redirect, url_for
 import json
 from collections import defaultdict
 from datetime import datetime
@@ -75,3 +75,28 @@ def book():
         return render_template("confirm.html", film=film, row=row+1, seat=seat+1, booked_by=seat_obj["booked_by"], time=show["time"])
     else:
         abort(400, "Це місце вже зайняте. Повернись назад і вибери інше.")
+
+@app.route("/admin", methods=["GET", "POST"])
+def admin_panel():
+    if not session.get("admin"):
+        abort(403)
+    films = load_films()
+    data = load_data()
+    if request.method == "POST":
+        film_id = int(request.form["film_id"])
+        date = request.form["date"]
+        time = request.form["time"]
+        new_id = max((s["id"] for s in data["shows"]), default=0) + 1
+        new_show = {
+            "id": new_id,
+            "film_id": film_id,
+            "date": date,
+            "time": time,
+            "seats": [
+                [{"status": 0, "booked_by": None} for _ in range(5)] for _ in range(3)
+            ]
+        }
+        data["shows"].append(new_show)
+        save_data(data)
+        return redirect(url_for("admin_panel"))
+    return render_template("admin.html", films=films, shows=data["shows"])
