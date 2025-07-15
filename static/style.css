@@ -152,4 +152,60 @@ border-color: #004085;
     background-color: #6A706E;
     color: #dfdfdf;
 }
+.seat-map {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.row-label {
+    min-width: 80px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.seat input[type="radio"] {
+    display: none;
+}
+
+.seat span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+    background-color: #1d1d1d;
+    transition: 0.2s ease-in-out;
+}
+
+.seat.available:hover span {
+    border-color: #0f0;
+    background-color: #003300;
+}
+
+.seat.available input[type="radio"]:checked + span {
+    background-color: #0f0;
+    border-color: #0f0;
+}
+
+.seat.occupied span {
+    background-color: #800;
+    border-color: #800;
+    cursor: not-allowed;
+}
 
