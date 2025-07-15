@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, abort
 import json
 from collections import defaultdict
 from datetime import datetime
@@ -42,3 +42,36 @@ def index():
     is_admin = session.get("admin", False)
 
     return render_template("index.html", shows_by_date=shows_by_date, is_admin=is_admin, filter_date=filter_date)
+
+
+@app.route("/book", methods=["POST"])
+def book():
+    show_id = int(request.form["show_id"])
+    seat_value = request.form.get("seat")
+    name = request.form.get("name")
+    surname = request.form.get("surname")
+    if not seat_value or not name or not surname:
+        abort(400, "Всі поля мають бути заповнені.")
+
+    try:
+        row_str, seat_str = seat_value.split('-')
+        row = int(row_str)
+        seat = int(seat_str)
+    except Exception:
+        abort(400, "Некоректний формат вибору місця.")
+
+    data = load_data()
+    show = next((s for s in data["shows"] if s["id"] == show_id), None)
+    if not show or "seats" not in show:
+        abort(404, "Показ не знайдено або немає даних про місця.")
+
+    seat_obj = show["seats"][row][seat]
+    if seat_obj["status"] == 0:
+        seat_obj["status"] = 1
+        seat_obj["booked_by"] = f"{name} {surname}"
+        save_data(data)
+        films = load_films()
+        film = next((f for f in films if f["id"] == show["film_id"]), None)
+        return render_template("confirm.html", film=film, row=row+1, seat=seat+1, booked_by=seat_obj["booked_by"], time=show["time"])
+    else:
+        abort(400, "Це місце вже зайняте. Повернись назад і вибери інше.")
