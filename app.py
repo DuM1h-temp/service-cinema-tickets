@@ -100,3 +100,30 @@ def admin_panel():
         save_data(data)
         return redirect(url_for("admin_panel"))
     return render_template("admin.html", films=films, shows=data["shows"])
+
+@app.route("/admin/edit_show/<int:show_id>", methods=["POST"])
+def edit_show(show_id):
+    if not session.get("admin"):
+        abort(403)
+    data = load_data()
+    show = next((s for s in data["shows"] if s["id"] == show_id), None)
+    if not show:
+        abort(404, "Показ не знайдено.")
+
+    show["film_id"] = int(request.form["film_id"])
+    show["date"] = request.form["date"]
+    show["time"] = request.form["time"]
+    save_data(data)
+
+    return redirect(url_for("admin_panel"))
+
+@app.route("/admin/delete/<int:show_id>", methods=["POST"])
+def delete_show(show_id):
+    if not session.get("admin"):
+        abort(403)
+    data = load_data()
+    original_len = len(data["shows"])
+    data["shows"] = [s for s in data["shows"] if s["id"] != show_id]
+    if len(data["shows"]) < original_len:
+        save_data(data)
+    return redirect(url_for("admin_panel"))
