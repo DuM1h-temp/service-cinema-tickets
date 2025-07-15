@@ -26,3 +26,37 @@
     <div class="container mt-4">
         {% block content %}{% endblock %}
     </div>
+
+    {% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const editButtons = document.querySelectorAll(".edit-button");
+            const editForm = document.getElementById("editForm");
+            const editShowId = document.getElementById("edit_show_id");
+            const editDate = document.getElementById("edit_date");
+            const editTime = document.getElementById("edit_time");
+            const editFilmId = document.getElementById("edit_film_id");
+
+            editButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const showId = this.dataset.showId;
+                    const date = this.dataset.date;
+                    const time = this.dataset.time;
+                    const filmId = this.dataset.film_id;
+
+                    editShowId.value = showId;
+                    editDate.value = date;
+                    editTime.value = time;
+                    editFilmId.value = filmId;
+
+                    editForm.action = `/admin/edit_show/${showId}`;
+
+                    const editModal = new bootstrap.Modal(document.getElementById("editModal"));
+                    editModal.show();
+                });
+            });
+        });
+    </script>
+    {% endblock %}
+</body>
+</html>
