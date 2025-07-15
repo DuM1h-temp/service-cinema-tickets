@@ -48,4 +48,28 @@ a:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
+.card-img-top {
+border-bottom: 1px solid #ddd;
+}
+
+.card-title {
+font-weight: 700;
+font-size: 1.25rem;
+color: #fff;
+}
+
+.card-text {
+font-size: 1rem;
+color: #d8d8d8;
+}
+
+.btn-primary {
+background-color: #0056b3;
+border-color: #004085;
+}
+
+.btn-primary:hover {
+    background-color: #004085;
+    border-color: #003366;
+}
 
