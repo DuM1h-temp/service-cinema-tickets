@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Успіх{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Розклад показів</h1>
+    <form method="get" action="{{ url_for('index') }}" class="mb-4">
+      <label for="filter_date">Оберіть дату:</label>
+      <input type="date" name="date" id="filter_date" value="{{ filter_date }}" />
+      <button type="submit" class="btn btn-primary btn-sm">Показати</button>    
+    </form>
+    {% for date, shows in shows_by_date.items() %}
+        <h3>{{ date }}</h3>
+        <div class="row mb-4">
+            {% for show in shows %}
+            <div class="col-md-4 mb-4">
+                <div class="poster-card" style="background-image: url('{{ show.film.poster_url }}');">
+                    <div class="poster-card-overlay">
+                        <h5 class="card-title mb-1">{{ show.film.title }}</h5>
+                        <p class="card-text mb-2">Час: <strong>{{ show.time }}</strong></p>
+                        <a href="{{ url_for('film', film_id=show.film.id, show_id=show.id) }}" class="btn btn-light btn-sm">Детальніше</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}
+
