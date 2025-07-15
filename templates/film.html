@@ -1,3 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}{{ film.title }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{{ film.poster_url }}" class="img-fluid" alt="Постер фільму">
+        </div>
+        <div class="col-md-7">
+            <h2>{{ film.title }}</h2>
+            <p>Дата: <strong>{{ show.date }}</strong></p>
+            <p>Час: <strong>{{ show.time }}</strong></p>
