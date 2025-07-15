@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}{{ film.title }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{{ film.poster_url }}" class="img-fluid" alt="Постер фільму">
+        </div>
+        <div class="col-md-7">
+            <h2>{{ film.title }}</h2>
+            <p>Дата: <strong>{{ show.date }}</strong></p>
+            <p>Час: <strong>{{ show.time }}</strong></p>
+                        {% if admin %}
+            <button type="button" class="btn btn-outline-primary mb-3" data-bs-toggle="modal" data-bs-target="#bookedModal">
+                Заброньовані місця
+            </button>
+            {% endif %}
+            {% if not started %}
+                <h4>Виберіть місце:</h4>
+                <form method="post" action="{{ url_for('book') }}">
+                    <input type="hidden" name="show_id" value="{{ show.id }}">
+                    <div class="mb-3">
+                        <div class="seat-map">
+                            {% for row in show.seats %}
+                                {% set row_idx = loop.index0 %}
+                                <div class="seat-row">
+                                    <span class="row-label">Ряд {{ loop.index }}</span>
+                                    {% for seat in row %}
+                                        {% set seat_idx = loop.index0 %}
+                                        {% set seat_id = row_idx ~ '-' ~ seat_idx %}
+                                        {% if seat.status == 0 %}
+                                            <label class="seat available">
+                                                <input type="radio" name="seat" value="{{ seat_id }}" required>
+                                                <span></span>
+                                            </label>
+                                        {% else %}
+                                            <div class="seat occupied">
+                                                <span></span>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="name" class="form-control" placeholder="Ім'я" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="surname" class="form-control" placeholder="Прізвище" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Забронювати</button>
+                </form>
+             {% else %}
+                <div class="alert alert-warning">
+                 Нажаль, фільм вже розпочався.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+     <a href="/" class="btn btn-primary mt-3">← Назад</a>
+    {% if admin %}
+    <div class="modal fade" id="bookedModal" tabindex="-1" aria-labelledby="bookedModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookedModalLabel">Заброньовані місця</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+          </div>
+          <div class="modal-body">
+            {% if booked_seats %}
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Ряд</th>
+                  <th>Місце</th>
+                  <th>Ім’я</th>
+                  <th>Прізвище</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for seat in booked_seats %}
+                <tr>
+                  <td>{{ seat.row }}</td>
+                  <td>{{ seat.seat }}</td>
+                  <td>{{ seat.name }}</td>
+                  <td>{{ seat.surname }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            {% else %}
+            <p class="text-muted">Немає заброньованих місць.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+{% endblock %}

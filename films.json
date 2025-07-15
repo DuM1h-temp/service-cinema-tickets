@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Супермен",
+        "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Як приборкати дракона",
+        "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tI7tcDR5hFtRHDzbECtDLVJi8nO.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Світ Юрського періоду: Відродження",
+        "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/j15dYzTx2hxqTO4E8od3ZJ9mY5k.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Ліло і Стіч",
+        "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/b6kxOVZoJ17Gjpz4fbPwutFNfZF.jpg"
+    },
+    {
+        "id": 5,
+        "title": "F1: Фільм",
+        "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/j9as1uSCddjVlUghzGb10Gvq6tP.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Смурфи",
+        "poster_url": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/emntCK2VHuBC2PMcqfU3Izj5YbE.jpg"
+    }
+]
