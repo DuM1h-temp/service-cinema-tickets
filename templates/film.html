@@ -16,3 +16,31 @@
                 Заброньовані місця
             </button>
             {% endif %}
+            {% if not started %}
+                <h4>Виберіть місце:</h4>
+                <form method="post" action="{{ url_for('book') }}">
+                    <input type="hidden" name="show_id" value="{{ show.id }}">
+                    <div class="mb-3">
+                        <div class="seat-map">
+                            {% for row in show.seats %}
+                                {% set row_idx = loop.index0 %}
+                                <div class="seat-row">
+                                    <span class="row-label">Ряд {{ loop.index }}</span>
+                                    {% for seat in row %}
+                                        {% set seat_idx = loop.index0 %}
+                                        {% set seat_id = row_idx ~ '-' ~ seat_idx %}
+                                        {% if seat.status == 0 %}
+                                            <label class="seat available">
+                                                <input type="radio" name="seat" value="{{ seat_id }}" required>
+                                                <span></span>
+                                            </label>
+                                        {% else %}
+                                            <div class="seat occupied">
+                                                <span></span>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
