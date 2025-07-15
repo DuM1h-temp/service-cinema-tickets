@@ -1,3 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}Успіх{% endblock %}
+
+{% block content %}
+    <div class="alert alert-success">
+        <h2 class="mb-3">✅ Успішно заброньовано!</h2>
+        <p>Фільм: <strong>{{ film.title }}</strong></p>
+        <p>Час: <strong>{{ time }}</strong></p>
+        <p>Місце: <strong>Ряд {{ row }}, Місце {{ seat }}</strong></p>
+        <p>Бронював: <strong>{{ booked_by }}</strong></p>
+    </div>
+
