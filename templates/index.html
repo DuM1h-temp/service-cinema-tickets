@@ -3,12 +3,10 @@
 {% block title %}Успіх{% endblock %}
 
 {% block content %}
-<div class="alert alert-success">
-    <h2 class="mb-3">✅ Успішно заброньовано!</h2>
-    <p>Фільм: <strong>{{ film.title }}</strong></p>
-    <p>Час: <strong>{{ time }}</strong></p>
-    <p>Місце: <strong>Ряд {{ row }}, Місце {{ seat }}</strong></p>
-    <p>Бронював: <strong>{{ booked_by }}</strong></p>
-</div>
-<a href="/" class="btn btn-primary">← Назад до фільмів</a>
-{% endblock %}
+    <h1 class="mb-4">Розклад показів</h1>
+    <form method="get" action="{{ url_for('index') }}" class="mb-4">
+      <label for="filter_date">Оберіть дату:</label>
+      <input type="date" name="date" id="filter_date" value="{{ filter_date }}" />
+      <button type="submit" class="btn btn-primary btn-sm">Показати</button>    
+    </form>
+
