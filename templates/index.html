@@ -9,4 +9,8 @@
       <input type="date" name="date" id="filter_date" value="{{ filter_date }}" />
       <button type="submit" class="btn btn-primary btn-sm">Показати</button>    
     </form>
+    {% for date, shows in shows_by_date.items() %}
+        <h3>{{ date }}</h3>
+        <div class="row mb-4">
+            {% for show in shows %}
 
