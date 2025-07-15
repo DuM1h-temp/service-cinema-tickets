@@ -43,6 +43,41 @@ def index():
 
     return render_template("index.html", shows_by_date=shows_by_date, is_admin=is_admin, filter_date=filter_date)
 
+@app.route("/film/<int:film_id>/<int:show_id>")
+def film(film_id, show_id):
+    films = load_films()
+    data = load_data()
+
+    film = next((f for f in films if f["id"] == film_id), None)
+    show = next((s for s in data["shows"] if s["id"] == show_id), None)
+
+    if not film or not show:
+        abort(404, "Фільм або показ не знайдено")
+
+    admin_mode = session.get("admin", False)
+
+    show_datetime_str = f"{show['date']} {show['time']}"
+    show_datetime = datetime.strptime(show_datetime_str, "%Y-%m-%d %H:%M")
+    now = datetime.now()
+
+    started = now >= show_datetime
+
+    booked_seats = []
+    if admin_mode:
+        for row_idx, row in enumerate(show["seats"]):
+            for seat_idx, seat in enumerate(row):
+                if seat["status"] == 1 and seat.get("booked_by"):
+                    parts = seat["booked_by"].split(" ", 1)
+                    name = parts[0]
+                    surname = parts[1] if len(parts) > 1 else ""
+                    booked_seats.append({
+                        "row": row_idx + 1,
+                        "seat": seat_idx + 1,
+                        "name": name,
+                        "surname": surname
+                    })
+
+    return render_template("film.html", film=film, show=show, admin=admin_mode, booked_seats=booked_seats, started=started)
 
 @app.route("/book", methods=["POST"])
 def book():
