@@ -91,4 +91,27 @@ border-color: #004085;
     padding: 15px;
     backdrop-filter: blur(5px);
 }
+#filter_date {
+    background-color: #7C7885;
+    color: #dfdfdf;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.form-select {
+    background-color: #7C7885;
+    color: #dfdfdf;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.form-control {
+    background-color: #7C7885;
+    color: #dfdfdf;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
