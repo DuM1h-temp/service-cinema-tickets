@@ -67,4 +67,39 @@
             </div>
         {% endfor %}
     </div>
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <form method="post" id="editForm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editModalLabel">Редагувати показ</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" name="show_id" id="edit_show_id">
+              <div class="mb-3">
+                <label for="edit_date" class="form-label">Дата</label>
+                <input type="date" class="form-control" name="date" id="edit_date" required>
+              </div>
+              <div class="mb-3">
+                <label for="edit_time" class="form-label">Час</label>
+                <input type="time" class="form-control" name="time" id="edit_time" required>
+              </div>
+              <div class="mb-3">
+                <label for="edit_film_id" class="form-label">Фільм</label>
+                <select class="form-select" name="film_id" id="edit_film_id" required>
+                  {% for film in films %}
+                    <option value="{{ film.id }}">{{ film.title }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
+              <button type="submit" class="btn btn-primary">Зберегти зміни</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
 {% endblock %}
