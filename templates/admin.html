@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Адмін панель{% endblock %}
+
+{% block content %}
+    <a href="{{ url_for('index') }}" class="btn btn-primary mb-3">← Повернутись до фільмів</a>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Додати показ фільму</h2>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="film_id" class="form-label">Фільм</label>
+                    <select name="film_id" id="film_id" class="form-select" required>
+                        {% for film in films %}
+                            <option value="{{ film.id }}">{{ film.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Дата</label>
+                    <input type="date" name="date" id="date" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Час</label>
+                    <input type="time" name="time" id="time" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success">Додати показ</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2>Додати новий фільм</h2>
+            <form method="post" action="{{ url_for('add_film') }}">
+              <div class="mb-3">
+                <label for="title" class="form-label">Назва фільму</label>
+                <input type="text" name="title" id="title" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label for="poster_url" class="form-label">Посилання на постер</label>
+                <input type="url" name="poster_url" id="poster_url" class="form-control" required>
+              </div>
+              <button type="submit" class="btn btn-success">Додати фільм</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <h3>Поточні покази</h3>
+    <div class="list-group">
+        {% for show in shows %}
+            {% set film = films | selectattr("id", "equalto", show.film_id) | first %}
+            <div class="list-group-item custom-show d-flex justify-content-between align-items-center">
+                <div>
+                    {{ show.date }} {{ show.time }} — {{ film.title if film else "Невідомо" }}
+                </div>
+                <div class="d-flex">
+                    <button type="button"
+                            class="btn btn-warning btn-sm me-2 edit-button"
+                            data-show-id="{{ show.id }}"
+                            data-date="{{ show.date }}"
+                            data-time="{{ show.time }}"
+                            data-film_id="{{ show.film_id }}">
+                        Редагувати
+                    </button>
+                    <form method="post" action="{{ url_for('delete_show', show_id=show.id) }}" onsubmit="return confirm('Ви дійсно хочете видалити цей показ?');" style="margin: 0;">
+                        <button type="submit" class="btn btn-danger btn-sm">Видалити</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <form method="post" id="editForm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editModalLabel">Редагувати показ</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" name="show_id" id="edit_show_id">
+              <div class="mb-3">
+                <label for="edit_date" class="form-label">Дата</label>
+                <input type="date" class="form-control" name="date" id="edit_date" required>
+              </div>
+              <div class="mb-3">
+                <label for="edit_time" class="form-label">Час</label>
+                <input type="time" class="form-control" name="time" id="edit_time" required>
+              </div>
+              <div class="mb-3">
+                <label for="edit_film_id" class="form-label">Фільм</label>
+                <select class="form-select" name="film_id" id="edit_film_id" required>
+                  {% for film in films %}
+                    <option value="{{ film.id }}">{{ film.title }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
+              <button type="submit" class="btn btn-primary">Зберегти зміни</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+{% endblock %}
