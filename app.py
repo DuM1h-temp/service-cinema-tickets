@@ -177,3 +177,6 @@ def logout():
 @app.context_processor
 def inject_user():
     return dict(is_admin=session.get("admin", False))
+
+if __name__ == "__main__":
+    app.run(debug=True)
