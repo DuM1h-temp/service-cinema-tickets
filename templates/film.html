@@ -60,3 +60,42 @@
         </div>
     </div>
      <a href="/" class="btn btn-primary mt-3">← Назад</a>
+    {% if admin %}
+    <div class="modal fade" id="bookedModal" tabindex="-1" aria-labelledby="bookedModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookedModalLabel">Заброньовані місця</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+          </div>
+          <div class="modal-body">
+            {% if booked_seats %}
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Ряд</th>
+                  <th>Місце</th>
+                  <th>Ім’я</th>
+                  <th>Прізвище</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for seat in booked_seats %}
+                <tr>
+                  <td>{{ seat.row }}</td>
+                  <td>{{ seat.seat }}</td>
+                  <td>{{ seat.name }}</td>
+                  <td>{{ seat.surname }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            {% else %}
+            <p class="text-muted">Немає заброньованих місць.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+{% endblock %}
