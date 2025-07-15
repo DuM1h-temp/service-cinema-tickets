@@ -127,3 +127,30 @@ def delete_show(show_id):
     if len(data["shows"]) < original_len:
         save_data(data)
     return redirect(url_for("admin_panel"))
+
+@app.route("/add_film", methods=["POST"])
+def add_film():
+    if not session.get("admin"):
+        abort(403)
+
+    title = request.form.get("title")
+    poster_url = request.form.get("poster_url")
+
+    if not title or not poster_url:
+        abort(400, "Назва і постер обов'язкові")
+
+    films = load_films()
+    new_id = max((f["id"] for f in films), default=0) + 1
+
+    new_film = {
+        "id": new_id,
+        "title": title,
+        "poster_url": poster_url
+    }
+
+    films.append(new_film)
+
+    with open("films.json", "w", encoding="utf-8") as f:
+        json.dump(films, f, indent=4, ensure_ascii=False)
+
+    return redirect(url_for("admin_panel"))
