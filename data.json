@@ -4,6 +4,893 @@
         "password": "admin123"
     },
     "shows": [
-
+        {
+            "id": 1,
+            "film_id": 4,
+            "date": "2025-07-16",
+            "time": "10:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 2,
+            "film_id": 6,
+            "date": "2025-07-16",
+            "time": "12:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 3,
+            "film_id": 2,
+            "date": "2025-07-16",
+            "time": "14:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 4,
+            "film_id": 1,
+            "date": "2025-07-16",
+            "time": "16:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 5,
+            "film_id": 3,
+            "date": "2025-07-16",
+            "time": "18:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 6,
+            "film_id": 5,
+            "date": "2025-07-16",
+            "time": "20:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 7,
+            "film_id": 4,
+            "date": "2025-07-17",
+            "time": "10:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 8,
+            "film_id": 6,
+            "date": "2025-07-17",
+            "time": "12:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 9,
+            "film_id": 2,
+            "date": "2025-07-17",
+            "time": "14:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 10,
+            "film_id": 1,
+            "date": "2025-07-17",
+            "time": "16:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 11,
+            "film_id": 3,
+            "date": "2025-07-17",
+            "time": "18:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        },
+        {
+            "id": 12,
+            "film_id": 5,
+            "date": "2025-07-17",
+            "time": "20:00",
+            "seats": [
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ],
+                [
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    },
+                    {
+                        "status": 0,
+                        "booked_by": null
+                    }
+                ]
+            ]
+        }
     ]
 }
